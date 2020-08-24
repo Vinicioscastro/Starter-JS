@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="box"></div>
+    </div>
+
+
+    <script>
+        var boxx = document.querySelector('.box');
+        boxx.style.width = "100px"
+        boxx.style.height = "100px"
+
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+
+        boxx.style.backgroundColor = getRandomColor();
+
+        console.log(boxx)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var nome = "vinicios"
+
+        nome = 2
+
+        // console.log(nome)
+
+        var aluno = {
+            nome: 'iker',
+            idade: 21,
+            peso: 105,
+            humano: true
+        }
+
+        function RetornaSexo(sexo) {
+            if (sexo === 'm' || sexo === 'M') {
+                return 'Masculino'
+            } if (sexo === 'f' || sexo === 'F') {
+                return "Feminino"
+            } else {
+                return 'outro'
+            }
+        }
+
+        function RTernario(sexo) {
+            return (sexo === 'M') ? 'masculinox' : 'femininox'
+        }
+
+        function retornar(sexo1) {
+            switch (sexo1) {
+                case 'm':
+                return 'masculino'
+
+                case 'M':
+                return 'Masculino'
+
+                case 'f':
+                return 'feminino'
+
+                default:
+                return 'outro';
+            }
+        }
+        var resultado = RTernario("g")
+
+        console.log(resultado)
+
+
+
+    </script>
+</body>
+
+</html>
