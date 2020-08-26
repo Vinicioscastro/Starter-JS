@@ -1,73 +1,57 @@
 "use strict";
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var list = /*#__PURE__*/function () {
-  function list() {
-    _classCallCheck(this, list);
-
-    this.todo = [];
-  }
-
-  _createClass(list, [{
-    key: "add",
-    value: function add() {
-      this.todo.push('inicio da todo: ');
-      console.log(this.todo);
+/* class list {
+    constructor() {
+        this.todo = [];
     }
-  }]);
 
-  return list;
-}();
-
-var todolist = /*#__PURE__*/function (_list) {
-  _inherits(todolist, _list);
-
-  var _super = _createSuper(todolist);
-
-  function todolist() {
-    var _this;
-
-    _classCallCheck(this, todolist);
-
-    _this = _super.call(this);
-    _this.usuario = 'iker';
-    return _this;
-  }
-
-  _createClass(todolist, [{
-    key: "mostrarusuario",
-    value: function mostrarusuario() {
-      console.log(this.usuario);
+    add() {
+        this.todo.push('inicio da todo: ')
+        console.log(this.todo)
     }
-  }]);
 
-  return todolist;
-}(list);
+}
 
-var minhaLista = new todolist();
+class todolist extends list {
+    constructor(){
+        super()
+        this.usuario = 'iker'
+    }
+
+    mostrarusuario(){
+        console.log(this.usuario)
+    }
+}
+
+var minhaLista = new todolist()
 
 document.getElementById('botao').onclick = function () {
-  minhaLista.add();
-  minhaLista.mostrarusuario();
-};
+    minhaLista.add()
+    minhaLista.mostrarusuario()
+} */
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; // map ele vai percorrer todo o vetor, posicao por posicao:
+
+var newArr = arr.map(function (item) {
+  return item * 2;
+});
+console.log(newArr); // reduce vai transformar em 1 unico valor
+
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); // filter vai pegar os pares pos ele retorna um true ou false
+
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter); // find saber se existe uma informação e encontrar ela no array
+
+var find = arr.find(function (item) {
+  return item === 6;
+});
+console.log(find); // arrow function em funsao anonima 
+
+var findd = arr.find(function (item) {
+  return item === 2;
+});
+console.log(findd);
