@@ -1,0 +1,3 @@
+{
+    "presets": ["@babel/preset-env"] // vai enternder o ambiente e traduzi pro navegador, converter pro navegador entender
+}
