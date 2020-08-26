@@ -70,7 +70,7 @@ console.log(soma(5, 3))
 console.log(soma(6))
 console.log(soma())
 
-*/
+
 
 const usuario = {
     nome: 'iker',
@@ -82,10 +82,10 @@ const usuario = {
     }
 }
 
-/* const nome = usuario.nome
+ const nome = usuario.nome
 const idade = usuario.idade
 const cdd = usuario.endereco.cidade
-console.log(nome, idade, cdd) */
+console.log(nome, idade, cdd) 
 
 const { nome, idade, endereco: {cidade} } = usuario // conceito de desinstruturação 
 
@@ -98,3 +98,21 @@ function mostraNome ({idade}){
 }
 
 mostraNome(usuario)
+
+*/
+
+// RESt - pegar os restos das propriedades 
+const usuario = {
+    nome: 'iker',
+    idade: 20,
+    endereco: {
+        rua: 'rua sao judas thadeu',
+        numero: 202,
+        cidade: 'Duque top city bacelar'
+    }
+}
+
+const { nome, ...resto } = usuario
+
+console.log(nome)
+console.log(resto)

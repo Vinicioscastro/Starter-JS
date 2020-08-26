@@ -1,5 +1,9 @@
 "use strict";
 
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
 /* class list {
     constructor() {
         this.todo = [];
@@ -72,32 +76,49 @@ console.log(soma(5, 3))
 console.log(soma(6))
 console.log(soma())
 
+
+
+const usuario = {
+    nome: 'iker',
+    idade: 20,
+    endereco: {
+        rua: 'rua sao judas thadeu',
+        numero: 202,
+        cidade: 'Duque top city'
+    }
+}
+
+ const nome = usuario.nome
+const idade = usuario.idade
+const cdd = usuario.endereco.cidade
+console.log(nome, idade, cdd) 
+
+const { nome, idade, endereco: {cidade} } = usuario // conceito de desinstruturação 
+
+console.log(nome)
+console.log(idade)
+console.log(cidade)
+
+function mostraNome ({idade}){
+    console.log(idade)
+}
+
+mostraNome(usuario)
+
 */
+// RESt - pegar os restos das propriedades 
 var usuario = {
   nome: 'iker',
   idade: 20,
   endereco: {
     rua: 'rua sao judas thadeu',
     numero: 202,
-    cidade: 'Duque top city'
+    cidade: 'Duque top city bacelar'
   }
 };
-/* const nome = usuario.nome
-const idade = usuario.idade
-const cdd = usuario.endereco.cidade
-console.log(nome, idade, cdd) */
 
 var nome = usuario.nome,
-    idade = usuario.idade,
-    cidade = usuario.endereco.cidade; // conceito de desinstruturação 
+    resto = _objectWithoutProperties(usuario, ["nome"]);
 
 console.log(nome);
-console.log(idade);
-console.log(cidade);
-
-function mostraNome(_ref) {
-  var idade = _ref.idade;
-  console.log(idade);
-}
-
-mostraNome(usuario);
+console.log(resto);

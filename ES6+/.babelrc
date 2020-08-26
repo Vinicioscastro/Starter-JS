@@ -1,3 +1,4 @@
 {
-    "presets": ["@babel/preset-env"] // vai enternder o ambiente e traduzi pro navegador, converter pro navegador entender
+    "presets": ["@babel/preset-env"], // vai enternder o ambiente e traduzi pro navegador, converter pro navegador entender
+    "plugins": ["@babel/plugin-proposal-object-rest-spread"] // para usar o rest/spread
 }
