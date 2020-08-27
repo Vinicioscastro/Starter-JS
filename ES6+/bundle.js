@@ -1,9 +1,5 @@
 "use strict";
 
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 /* class list {
     constructor() {
         this.todo = [];
@@ -105,20 +101,31 @@ function mostraNome ({idade}){
 
 mostraNome(usuario)
 
-*/
+
+
 // RESt - pegar os restos das propriedades 
-var usuario = {
-  nome: 'iker',
-  idade: 20,
-  endereco: {
-    rua: 'rua sao judas thadeu',
-    numero: 202,
-    cidade: 'Duque top city bacelar'
-  }
-};
+const usuario = {
+    nome: 'iker',
+    idade: 20,
+    endereco: {
+        rua: 'rua sao judas thadeu',
+        numero: 202,
+        cidade: 'Duque top city bacelar'
+    }
+}
 
-var nome = usuario.nome,
-    resto = _objectWithoutProperties(usuario, ["nome"]);
+const { nome, ...resto } = usuario
 
-console.log(nome);
-console.log(resto);
+console.log(nome)
+console.log(resto)
+
+const arr = [1, 2, 3, 4, 5]
+
+const [a, b , ...c] = arr
+
+console.log(a, b, c) */
+// SPREAD > propagar, de repassar as informações de um objeto ou array para outra estrutura de dados
+var arr = [1, 2, 3];
+var arr2 = [4, 5, 6];
+var arr3 = [].concat(arr, arr2);
+console.log(arr3);

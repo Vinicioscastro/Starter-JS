@@ -99,7 +99,7 @@ function mostraNome ({idade}){
 
 mostraNome(usuario)
 
-*/
+
 
 // RESt - pegar os restos das propriedades 
 const usuario = {
@@ -116,3 +116,18 @@ const { nome, ...resto } = usuario
 
 console.log(nome)
 console.log(resto)
+
+const arr = [1, 2, 3, 4, 5]
+
+const [a, b , ...c] = arr
+
+console.log(a, b, c) */
+
+// SPREAD > propagar, de repassar as informações de um objeto ou array para outra estrutura de dados
+
+const arr = [1, 2, 3]
+const arr2= [4, 5, 6]
+
+const arr3 = [...arr, ...arr2]
+
+console.log(arr3)
