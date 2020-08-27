@@ -1,4 +1,4 @@
-/* class list {
+ class list {
     constructor() {
         this.todo = [];
     }
@@ -130,7 +130,7 @@ const arr2= [4, 5, 6]
 
 const arr3 = [...arr, ...arr2]
 
-console.log(arr3)*/
+console.log(arr3)
 
 const usuario1 = {
     nome:"vinicios",
