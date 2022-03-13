@@ -1,6 +1,7 @@
 /* class list {
     constructor() {
         this.todo = [];
+
     }
 
     add() {
